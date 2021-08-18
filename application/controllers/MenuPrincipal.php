@@ -40,29 +40,29 @@ class MenuPrincipal extends CI_Controller{
         $custom = new CustomLibrary();
         $this->fecha = $custom->getShortDateNow();
         $json = $this->printJson();
-        $this->uf_val = $json["uf"]["valor"];
+        $this->uf_val = $custom->formatNumber($json["uf"]["valor"]);
         $this->uf_name = $json["uf"]["nombre"];
-        $this->ivp_val = $json["ivp"]["valor"];
+        $this->ivp_val = $custom->formatNumber($json["ivp"]["valor"]);
         $this->ivp_name = $json["ivp"]["nombre"];
-        $this->usd_val = $json["dolar"]["valor"];
+        $this->usd_val = $custom->formatNumber($json["dolar"]["valor"]);
         $this->usd_name = $json["dolar"]["nombre"];
-        $this->iusd_val = $json["dolar_intercambio"]["valor"];
+        $this->iusd_val = $custom->formatNumber($json["dolar_intercambio"]["valor"]);
         $this->iusd_name = $json["dolar_intercambio"]["nombre"];
-        $this->eur_val = $json["euro"]["valor"];
+        $this->eur_val = $custom->formatNumber($json["euro"]["valor"]);
         $this->eur_name = $json["euro"]["nombre"];
-        $this->utm_val = $json["utm"]["valor"];
+        $this->utm_val = $custom->formatNumber($json["utm"]["valor"]);
         $this->utm_name = $json["utm"]["nombre"];
-        $this->ipc_val = $json["utm"]["valor"];
-        $this->ipc_name = $json["utm"]["nombre"];
-        $this->imacec_val = $json["imacec"]["valor"];
+        $this->ipc_val = $custom->formatNumber($json["ipc"]["valor"]);
+        $this->ipc_name = $json["ipc"]["nombre"];
+        $this->imacec_val = $custom->formatNumber($json["imacec"]["valor"]);
         $this->imacec_name = $json["imacec"]["nombre"];
-        $this->tpm_val = $json["tpm"]["valor"];
+        $this->tpm_val = $custom->formatNumber($json["tpm"]["valor"]);
         $this->tpm_name = $json["tpm"]["nombre"];
-        $this->cup_val = $json["libra_cobre"]["valor"];
+        $this->cup_val = $custom->formatNumber($json["libra_cobre"]["valor"]);
         $this->cup_name = $json["libra_cobre"]["nombre"];
-        $this->des_val = $json["tasa_desempleo"]["valor"];
+        $this->des_val = $custom->formatNumber($json["tasa_desempleo"]["valor"]);
         $this->des_name = $json["tasa_desempleo"]["nombre"];
-        $this->btc_val = $json["bitcoin"]["valor"];
+        $this->btc_val = $custom->formatNumber($json["bitcoin"]["valor"]);
         $this->btc_name = $json["bitcoin"]["nombre"];
                 
         $data['fecha'] = $this->fecha;
@@ -78,15 +78,19 @@ class MenuPrincipal extends CI_Controller{
         $data['eur_name'] = $this->eur_name;
         $data['ipc_val'] = $this->ipc_val;
         $data['ipc_name'] = $this->ipc_name;
+        $data['imacec_val'] = $this->imacec_val;
+        $data['imacec_name'] = $this->imacec_name;
         $data['utm_val'] = $this->utm_val;
         $data['utm_name'] = $this->utm_name;
+        $data['tpm_val'] = $this->tpm_val;
+        $data['tpm_name'] = $this->tpm_name;
         $data['cup_val'] = $this->cup_val;
         $data['cup_name'] = $this->cup_name;
         $data['des_val'] = $this->des_val;
         $data['des_name'] = $this->des_name;
         $data['btc_val'] = $this->btc_val;
         $data['btc_name'] = $this->btc_name;
-        
+
         return $this->load->view('menu_principal', $data);
     }
     

@@ -51,7 +51,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'MenuPrincipal/index';
 $route['404_override'] = '';
-$route['translate_uri_dashes'] = FALSE;
+$route['translate_uri_dashes'] = TRUE;
 $route['indicadores-graficos'] = 'IndicadoresGraficos/index';
+$route['indicadores-graficos-result'] = 'IndicadoresGraficosResult/jsonIndicadoresResult';
 $route['unidad-fomento'] = 'UnidadFomento/index';
-$route['menu_principal'] = 'MenuPrincipal/index';
+$route['menu-principal'] = 'MenuPrincipal/index';

@@ -6,6 +6,7 @@
  */
 class IndicadoresLibrary {
     protected $json;
+    protected $json2;
     
     public function __construct() {
         
@@ -17,8 +18,18 @@ class IndicadoresLibrary {
         $this->json = json_decode($jsonUrl, true);
     }
     
+    public function importUrlJson2($url)
+    {
+        $json = file_get_contents($url);
+    }
+    
     public function getJson()
     {
         return $this->json;
+    }
+    
+    public function getJson2()
+    {
+        return $this->json2;
     }
 }
