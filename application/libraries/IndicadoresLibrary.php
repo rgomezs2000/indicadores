@@ -21,6 +21,7 @@ class IndicadoresLibrary {
     public function importUrlJson2($url)
     {
         $json = file_get_contents($url);
+        $this->json2 = $json;
     }
     
     public function getJson()

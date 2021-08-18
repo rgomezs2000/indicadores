@@ -53,6 +53,6 @@ $route['default_controller'] = 'MenuPrincipal/index';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = TRUE;
 $route['indicadores-graficos'] = 'IndicadoresGraficos/index';
-$route['indicadores-graficos-result'] = 'IndicadoresGraficosResult/jsonIndicadoresResult';
+$route['indicadores-graficos-result'] = 'IndicadoresGraficos/jsonIndicadoresResult';
 $route['unidad-fomento'] = 'UnidadFomento/index';
 $route['menu-principal'] = 'MenuPrincipal/index';

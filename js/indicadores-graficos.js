@@ -20,18 +20,18 @@ $(document).ready(function(){
         }else{
             $.ajax({
                 type: "GET",
-                dataType: "json",
-                contentType: "application/json",
                 url: urlJsonIndic,
                 data:{
                     indic: indic,
                     fecha: fecha
                 },
                 success: function(o){
-                    console.log(o);
+                    $("#result-grafico").html(o);
                 },
                 error: function(xhr, ajaxOptions, thrownError){
-                    console.log("Error: " + xhr + " " + ajaxOptions + " " + thrownError);
+                    alerta("Indicadores económicos", "Error al cargar los datos: " + xhr + " " + ajaxOptions + " " + thrownError);
+                    $("#result-grafico").html("");
+                    event.returnValue = false;
                 }
             });
         }
